@@ -1,8 +1,13 @@
 <template>
   <div class="hello">
       <input type="text" v-model="ime" placeholder="Ime">
+      <div>
       <input type="text" v-model="prezime" placeholder="Prezime">
-      <p> {{ imeprezime }} </p>
+      </div>
+      <div>
+      <p v-show='klik'> {{ imeprezime }} </p>
+      <button v-on:click="prikaziPoruku" class="klik">Prikazi poruku</button>
+      </div>
   </div>
 </template>
 
@@ -13,6 +18,7 @@ export default {
     return {
       ime: '',
       prezime: '',
+      klik: false,
     };
   },
   computed: {
@@ -21,6 +27,13 @@ export default {
     },
   },
   methods: {
+    prikaziPoruku() {
+      if (!this.klik) {
+        this.klik = true;
+      } else {
+        this.klik = false;
+      }
+    },
   },
 };
 </script>
@@ -40,5 +53,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.klik{
+  margin-top:20px;
 }
 </style>
