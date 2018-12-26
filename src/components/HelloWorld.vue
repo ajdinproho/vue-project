@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
+      <div class="prvi-input">
       <input type="text" v-model="ime" placeholder="Ime">
-      <div>
+      </div>
+      <div class="drugi-input">
       <input type="text" v-model="prezime" placeholder="Prezime">
       </div>
       <div>
@@ -56,5 +58,8 @@ a {
 }
 .klik{
   margin-top:20px;
+}
+.prvi-input{
+  margin-bottom:5px;
 }
 </style>
