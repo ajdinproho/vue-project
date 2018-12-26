@@ -1,34 +1,26 @@
 <template>
   <div class="hello">
-  <input
-    type="text"
-    :value="nasaPoruka"
-    @keydown="logiranje"/>
-    <h1>{{ msg }}</h1>
-    <p>{{novaPoruka}}</p>
+      <input type="text" v-model="ime" placeholder="Ime">
+      <input type="text" v-model="prezime" placeholder="Prezime">
+      <p> {{ imeprezime }} </p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String,
-  },
-  data(){
-    return{
-      nasaPoruka: 'nema interneta',
+  data() {
+    return {
+      ime: '',
+      prezime: '',
     };
   },
-  computed:{
-    novaPoruka(){
-      return `${this.msg} ${this.nasaPoruka}`;
-    },    
-  },
-  methods:{
-    logiranje(e){
-      this.nasaPoruka = e.target.value;
+  computed: {
+    imeprezime() {
+      return `Zdravo, ${this.ime} ${this.prezime}`;
     },
+  },
+  methods: {
   },
 };
 </script>
